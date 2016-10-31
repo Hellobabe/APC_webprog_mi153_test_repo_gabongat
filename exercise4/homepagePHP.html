@@ -1,0 +1,254 @@
+<html>
+<head>
+<title>First Activity</title>
+<style>
+body {
+	background-color:#7C6958;
+}
+h1 {
+	background-color:rgba(0,0,0,0.7);
+	font-family:courier;
+	font-size:260%;
+	text-align:center;
+	color:#7C6958;
+}
+table, th {
+	border-collapse: collapse;
+	border: 1px solid;
+	padding: 5px;
+
+}
+th.serif {
+	font-family: georgia, serif;
+}
+th.monospace {
+	font-family: courier, monospace;
+}
+#points {
+	text-align:center;
+	border: 3px solid maroon;
+}
+.error {
+	color:red;
+}
+#ho {
+	font-weight: bold;
+}
+audio{
+display: none;
+}
+</style>
+<script>
+function myFunction() {
+    document.getElementById("yobab").innerHTML = "MY HOBBIES";
+	document.getElementById("yobabs").innerHTML = "MY INTERESTS";
+    document.getElementById("image1").src="Game.png";
+	document.getElementById("image2").src="Music.png";
+	document.getElementById("image3").src="TV.png";
+	document.getElementById("image4").src="db.png";
+	document.getElementById("image5").src="scc.png";
+	document.getElementById("image6").src="bal.png";
+	
+}
+
+function myFunction2() {
+   document.getElementById("image1").src="SS.png";
+   document.getElementById("image2").src="BS.png";
+   document.getElementById("image3").src="P.png";
+   document.getElementById("image4").src="Pizza.png";
+   document.getElementById("image5").src="Fries.png";
+   document.getElementById("image6").src="FC.png";
+   document.getElementById("yobab").innerHTML = "MY FAVORITE MOVIES";
+   document.getElementById("yobabs").innerHTML = "MY FAVORITE FOODS";
+}
+
+</script>
+</head>
+<body>
+
+<h1>MY FIRST ACTIVITY</h1>
+
+
+<div id='points'>
+<table align="center" width="50%">
+     <tr>
+	<th class="serif">NAME:</th>
+	<th class="monospace">Gene Carlo Alanza Bongat</th>
+     </tr>
+     <tr>
+	<th class="serif">NICKNAME:</th>
+	<th class="monospace">CARL</th>
+     </tr>
+     <tr>
+	<th class="serif">AGE:</th>
+	<th class="monospace">eighteen(18)</th>
+     </tr>
+     <tr>
+	<th class="serif">BIRTHDATE:</th>
+	<th class="monospace">August 16 1998</th>
+     </tr>
+	
+<table align="center" width="50%">
+     <tr>
+	 <th><button type="button" onclick="myFunction()">Back</button></th>
+	<th id="yobab" class="monospace">MY HOBBIES</th>
+	<th><button type="button" onclick="myFunction2()">Next</button></th>
+     </tr>
+     <tr>
+	<th><img id="image1" src="Game.png" width="200" height="150"></th>
+	<th><img id="image2" src="Music.png" width="200" height="150"></th>
+	<th><img id="image3" src="TV.png" width="200" height="150"></th>
+     </tr>
+	<th id="yobabs" colspan="3" class="monospace">MY INTERESTS</th>
+     <tr>
+	<th><img id="image4" src="db.png" width="200" height="150"></th>
+	<th><img id="image5" src="scc.png" width="200" height="150"></th>
+	<th><img id="image6"src="bal.png" width="200" height="150"></th>
+     </tr>
+
+	 <table align="center" width="50%">
+	 <tr>
+	<th><button type="button" onclick="document.getElementById('me').innerHTML = 'I sleep.'">Click Me!</button></th>
+	<th id="me">What I do when I'm alone?</th>
+	 </tr>
+	 <tr>
+	<th><button type="button" onclick="document.getElementById('me1').innerHTML = 'I dance.'">Click me!</button></th>
+	<th id="me1">What is my talent?</th>
+	 </tr>
+	 <tr>
+	<th><button type="button" onclick="document.getElementById('me2').innerHTML = 'So I can pass -,-'">Click me!</button></th>
+	<th id="me2">Why I need to do this?</th>
+	 </tr>
+	 <tr>
+	<th><button type="button" onclick="document.getElementById('me3').innerHTML = 'I want to graduate.'">Click me!</button></th>
+	<th id="me3">What I want in my life?</th>
+	 </tr>
+	 <tr>
+	<th><button type="button" onclick="document.getElementById('me4').innerHTML = 'I play online games.'">Click me!</button></th>
+	<th id="me4">What I do when I'm bored?</th>
+	 </tr>
+</table>
+	 <?php
+// define variables and set to empty values
+$nameErr = $nicknameErr = $emailErr = $homeErr = $cellErr = $commentErr = $genderErr = "";
+$name = $nickname = $email = $home = $cell = $comment = $gender = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["name"])) {
+    $nameErr = "Name is required";
+  } else {
+    $name = test_input($_POST["name"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[0-9a-zA-Z]+$/",$name)) {
+      $nameErr = "Only letters and Numbers"; 
+    }
+  }
+  if (empty($_POST["nickname"])) {
+    $nicknameErr = "Nickname is required";
+  } else {
+    $nickname = test_input($_POST["nickname"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[0-9a-zA-Z]+$/",$nickname)) {
+      $nicknameErr = "Letters Only!"; 
+    }
+  }
+  
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = test_input($_POST["email"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $emailErr = "Invalid email format"; 
+    }
+  }
+   if (empty($_POST["home"])) {
+    $homeErr = "Home Address is required";
+  } else {
+    $home = test_input($_POST["home"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[0-9a-zA-Z]+$/",$home)) {
+      $homeErr = "Only letters and Numbers"; 
+    }
+  }
+   if (empty($_POST["gender"])) {
+    $genderErr = "Gender is required";
+  } else {
+    $gender = test_input($_POST["gender"]);
+  }
+}
+   if (empty($_POST["cell"])) {
+    $cellErr = "";
+  } else {
+    $cell = test_input($_POST["cell"]);
+    if (!preg_match("[0-9 ]",$cell)) {
+      $cellErr = "Only Numbers are allowed!"; 
+    }
+  }
+
+  if (empty($_POST["comment"])) {
+    $comment = "";
+  } else {
+    $comment = test_input($_POST["comment"]);
+  }
+
+ 
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+	<div id='ho'>
+<h2>Join me! Register below.</h2>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+ Complete Name: <input type="text" name="name" value="<?php echo $name;?>">
+  <span class="error">* <?php echo $nameErr;?></span>
+  <br><br>
+ Nickname: <input type="text" name="nickname" value="<?php echo $nickname;?>">
+  <span class="error">* <?php echo $nicknameErr;?></span>
+  <br><br>
+ E-mail:  <input type="text" name="email" value="<?php echo $email;?>">
+  <span class="error">* <?php echo $emailErr;?></span>
+  <br><br>
+ Home Address:  <input type="text" name="home" value="<?php echo $home;?>">
+  <span class="error">*<?php echo $homeErr;?></span>
+  <br><br>
+ Gender:
+  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="Female">Female
+  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="Male">Male
+  <span class="error">*<?php echo $genderErr;?></span>
+  <br><br>
+ Cell-Phone Number:  <input type="text" name="cell" value="<?php echo $cell;?>">
+  <span class="error">*<?php echo $cellErr;?></span>
+  <br><br>
+  Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
+  <br><br>
+  <p><span class="error">* required field.</span></p>
+  
+  <input type="submit" name="submit" value="Submit">  
+</form>
+
+<?php
+echo "<h2>Your Input:</h2>";
+echo $name;
+echo "<br>";
+echo $nickname;
+echo "<br>";
+echo $email;
+echo "<br>";
+echo $home;
+echo "<br>";
+echo $comment;
+echo "<br>";
+echo $gender;
+echo $cell;
+echo "<br>";
+?>
+<audio controls autoplay>
+<source src="Can't help falling in love.mp3" type="audio/mpeg">
+</audio>
+</div>
+</body>
+</html>
