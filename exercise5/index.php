@@ -15,7 +15,7 @@ if(isset($_GET['delete_id']))
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>CRUD Operations With PHP and MySql - By Cleartuts</title>
+<title>My Website</title>
 <link rel="stylesheet" href="style.css" type="text/css" />
 <script type="text/javascript">
 function edt_id(id)
@@ -49,9 +49,11 @@ function delete_id(id)
     <tr>
     <th colspan="5"><a href="homepagePHP.php"><img src="images.jpg" height = 100px; width = 100px; align="left"/></th>
     </tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>City Name</th>
+    <th>Full Name</th>
+    <th>Nick Name</th>
+    <th>Home Address</th>
+	<th>Cell number</th>
+	<th>Gender</th>
     <th colspan="2">Operations</th>
     </tr>
 	
@@ -65,6 +67,8 @@ function delete_id(id)
         <td><?php echo $row[1]; ?></td>
         <td><?php echo $row[2]; ?></td>
         <td><?php echo $row[3]; ?></td>
+		<td><?php echo $row[4]; ?></td>
+		<td><?php echo $row[5]; ?></td>
   <td align="center"><a href="javascript:edt_id('<?php echo $row[0]; ?>')"><img src="2.jpg" height = 50px; width = 50px; align="EDIT" /></a></td>
         <td align="center"><a href="javascript:delete_id('<?php echo $row[0]; ?>')"><img src="del.jpg" height = 50px; width = 50px; align="DELETE" /></a></td>
         </tr>

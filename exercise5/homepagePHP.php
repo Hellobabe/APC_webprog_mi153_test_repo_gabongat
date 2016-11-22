@@ -135,14 +135,16 @@ include_once 'dbconfig.php';
 if(isset($_POST['btn-save']))
 {
  // variables for input data
- $first_name = $_POST['first_name'];
- $last_name = $_POST['last_name'];
- $city_name = $_POST['city_name'];
+ $full_name = $_POST['full_name'];
+ $nick_name = $_POST['nick_name'];
+ $home_add = $_POST['home_add'];
+ $cell_num = $_POST['cell_num'];
+ $gender = $_POST['gender'];
  // variables for input data
  
  // sql query for inserting data into database
  
-        $sql_query = "INSERT INTO users(first_name,last_name,user_city) VALUES('$first_name','$last_name','$city_name')";
+        $sql_query = "INSERT INTO users(full_name, nick_name,home_add, cell_num,gender) VALUES('$full_name','$nick_name','$home_add','$cell_num','$gender')";
  mysqli_query($con,$sql_query);
         
         // sql query for inserting data into database
@@ -171,13 +173,19 @@ if(isset($_POST['btn-save']))
    
     </tr>
     <tr>
-    <td><input type="text" name="first_name" placeholder="First Name" required /></td>
+    <td><input type="text" name="full_name" placeholder="Full Name" required /></td>
     </tr>
     <tr>
-    <td><input type="text" name="last_name" placeholder="Last Name" required /></td>
+    <td><input type="text" name="nick_name" placeholder="Nick Name" required /></td>
     </tr>
     <tr>
-    <td><input type="text" name="city_name" placeholder="City" required /></td>
+    <td><input type="text" name="home_add" placeholder="home add " required /></td>
+    </tr>
+	 <tr>
+    <td><input type="text" name="cell_num" placeholder="cell number " required /></td>
+    </tr>
+	 <tr>
+    <td><input type="text" name="gender" placeholder="Gender " required /></td>
     </tr>
     <tr>
     <td><button type="submit" name="btn-save">SAVE<a/></button></td>

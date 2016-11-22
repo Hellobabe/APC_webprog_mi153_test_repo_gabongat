@@ -9,13 +9,15 @@ if(isset($_GET['edit_id']))
 if(isset($_POST['btn-update']))
 {
  // variables for input data
- $first_name = $_POST['first_name'];
- $last_name = $_POST['last_name'];
- $city_name = $_POST['city_name'];
+ $full_name = $_POST['full_name'];
+ $nick_name = $_POST['nick_name'];
+ $home_add = $_POST['home_add'];
+ $cell_num = $_POST['cell_num'];
+ $gender = $_POST['gender'];
  // variables for input data
 
  // sql query for update data into database
- $sql_query = "UPDATE users SET first_name='$first_name',last_name='$last_name',user_city='$city_name' WHERE user_id=".$_GET['edit_id'];
+ $sql_query = "UPDATE users SET full_name='$full_name',nick_name='$nick_name',home_add='$home_add',gender='$gender' WHERE user_id=".$_GET['edit_id'];
  // sql query for update data into database
  
  // sql query execution function
@@ -64,13 +66,19 @@ if(isset($_POST['btn-cancel']))
     <form method="post">
     <table align="center">
     <tr>
-    <td><input type="text" name="first_name" placeholder="First Name" value="<?php echo $fetched_row['first_name']; ?>" required /></td>
+    <td><input type="text" name="full_name" placeholder="Full Name" value="<?php echo $fetched_row['full_name']; ?>" required /></td>
     </tr>
     <tr>
-    <td><input type="text" name="last_name" placeholder="Last Name" value="<?php echo $fetched_row['last_name']; ?>" required /></td>
+    <td><input type="text" name="nick_name" placeholder="Nick Name" value="<?php echo $fetched_row['nick_name']; ?>" required /></td>
     </tr>
     <tr>
-    <td><input type="text" name="city_name" placeholder="City" value="<?php echo $fetched_row['user_city']; ?>" required /></td>
+    <td><input type="text" name="home_add" placeholder="City" value="<?php echo $fetched_row['home_add']; ?>" required /></td>
+    </tr>
+	    <tr>
+    <td><input type="text" name="cell_num" placeholder="Cell number" value="<?php echo $fetched_row['cell_num']; ?>" required /></td>
+    </tr>
+	    <tr>
+    <td><input type="text" name="gender" placeholder="Gender" value="<?php echo $fetched_row['gender']; ?>" required /></td>
     </tr>
     <tr>
     <td>
