@@ -38,7 +38,7 @@ if(isset($_POST['btn-update']))
   </script>
   <?php
  }
- // sql query execution function
+ // sql  query execution function
 }
 if(isset($_POST['btn-cancel']))
 {
