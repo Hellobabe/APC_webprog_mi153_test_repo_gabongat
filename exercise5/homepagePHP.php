@@ -140,11 +140,13 @@ if(isset($_POST['btn-save']))
  $home_add = $_POST['home_add'];
  $cell_num = $_POST['cell_num'];
  $gender = $_POST['gender'];
+ $email = $_POST['email'];
+ $comment = $_POST['comment'];
  // variables for input data
  
  // sql query for inserting data into database
  
-        $sql_query = "INSERT INTO users(full_name, nick_name,home_add, cell_num,gender) VALUES('$full_name','$nick_name','$home_add','$cell_num','$gender')";
+        $sql_query = "INSERT INTO users(full_name, nick_name,home_add, cell_num, gender, email, comment) VALUES('$full_name','$nick_name','$home_add','$cell_num','$gender','$email','$comment')";
  mysqli_query($con,$sql_query);
         
         // sql query for inserting data into database
@@ -179,13 +181,19 @@ if(isset($_POST['btn-save']))
     <td><input type="text" name="nick_name" placeholder="Nick Name" required /></td>
     </tr>
     <tr>
-    <td><input type="text" name="home_add" placeholder="home add " required /></td>
+    <td><input type="text" name="home_add" placeholder="home address " required /></td>
     </tr>
 	 <tr>
     <td><input type="text" name="cell_num" placeholder="cell number " required /></td>
     </tr>
 	 <tr>
     <td><input type="text" name="gender" placeholder="Gender " required /></td>
+    </tr>
+	 <tr>
+    <td><input type="text" name="email" placeholder="Email address " required /></td>
+    </tr>
+	 <tr>
+    <td><input type="text" name="comment" placeholder="Comment " required /></td>
     </tr>
     <tr>
     <td><button type="submit" name="btn-save">SAVE<a/></button></td>

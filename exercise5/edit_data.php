@@ -14,10 +14,12 @@ if(isset($_POST['btn-update']))
  $home_add = $_POST['home_add'];
  $cell_num = $_POST['cell_num'];
  $gender = $_POST['gender'];
+ $email = $_POST['email'];
+ $comment = $_POST['comment'];
  // variables for input data
 
  // sql query for update data into database
- $sql_query = "UPDATE users SET full_name='$full_name',nick_name='$nick_name',home_add='$home_add',gender='$gender' WHERE user_id=".$_GET['edit_id'];
+ $sql_query = "UPDATE users SET full_name='$full_name',nick_name='$nick_name',home_add='$home_add', cell_num='$cell_num',gender='$gender',email='$email',comment='$comment' WHERE user_id=".$_GET['edit_id'];
  // sql query for update data into database
  
  // sql query execution function
@@ -38,7 +40,7 @@ if(isset($_POST['btn-update']))
   </script>
   <?php
  }
- // sql  query execution function
+ // sql query execution function
 }
 if(isset($_POST['btn-cancel']))
 {
@@ -74,11 +76,17 @@ if(isset($_POST['btn-cancel']))
     <tr>
     <td><input type="text" name="home_add" placeholder="City" value="<?php echo $fetched_row['home_add']; ?>" required /></td>
     </tr>
-	    <tr>
+	<tr>
     <td><input type="text" name="cell_num" placeholder="Cell number" value="<?php echo $fetched_row['cell_num']; ?>" required /></td>
     </tr>
-	    <tr>
+	<tr>
     <td><input type="text" name="gender" placeholder="Gender" value="<?php echo $fetched_row['gender']; ?>" required /></td>
+    </tr>
+	<tr>
+    <td><input type="text" name="email" placeholder="Email address" value="<?php echo $fetched_row['email']; ?>" required /></td>
+    </tr>
+	<tr>
+    <td><input type="text" name="comment" placeholder="Comment" value="<?php echo $fetched_row['comment']; ?>" required /></td>
     </tr>
     <tr>
     <td>
