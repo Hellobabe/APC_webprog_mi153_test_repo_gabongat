@@ -52,7 +52,7 @@ function delete_id(id)
     <th>Full Name</th>
     <th>Nick Name</th>
     <th>Home Address</th>
-	<th>Age<th>
+	<th>Age</th>
 	<th>Cell number</th>
 	<th>Gender</th>
 	<th>Email</th>
