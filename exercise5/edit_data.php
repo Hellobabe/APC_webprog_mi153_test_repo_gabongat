@@ -12,6 +12,7 @@ if(isset($_POST['btn-update']))
  $full_name = $_POST['full_name'];
  $nick_name = $_POST['nick_name'];
  $home_add = $_POST['home_add'];
+ $age = $_POST['age'];
  $cell_num = $_POST['cell_num'];
  $gender = $_POST['gender'];
  $email = $_POST['email'];
@@ -19,7 +20,7 @@ if(isset($_POST['btn-update']))
  // variables for input data
 
  // sql query for update data into database
- $sql_query = "UPDATE users SET full_name='$full_name',nick_name='$nick_name',home_add='$home_add', cell_num='$cell_num',gender='$gender',email='$email',comment='$comment' WHERE user_id=".$_GET['edit_id'];
+ $sql_query = "UPDATE users SET full_name='$full_name',nick_name='$nick_name',home_add='$home_add',age='$age' ,cell_num='$cell_num',gender='$gender',email='$email',comment='$comment' WHERE user_id=".$_GET['edit_id'];
  // sql query for update data into database
  
  // sql query execution function
@@ -75,6 +76,9 @@ if(isset($_POST['btn-cancel']))
     </tr>
     <tr>
     <td><input type="text" name="home_add" placeholder="City" value="<?php echo $fetched_row['home_add']; ?>" required /></td>
+    </tr>
+	<tr>
+    <td><input type="text" name="age" placeholder="Age" value="<?php echo $fetched_row['age']; ?>" required /></td>
     </tr>
 	<tr>
     <td><input type="text" name="cell_num" placeholder="Cell number" value="<?php echo $fetched_row['cell_num']; ?>" required /></td>
