@@ -74,7 +74,7 @@ function delete_id(id)
 		<td><?php echo $row[5]; ?></td>
 		<td><?php echo $row[6]; ?></td>
 		<td><?php echo $row[7]; ?></td>
-		<td><?php echo $row[8]; ?></td>
+		<td><?php echo $row[9]; ?></td>
   <td align="center"><a href="javascript:edt_id('<?php echo $row[0]; ?>')"><img src="2.jpg" height = 50px; width = 50px; align="EDIT" /></a></td>
         <td align="center"><a href="javascript:delete_id('<?php echo $row[0]; ?>')"><img src="b_drop.png" height = 40px; width = 20px; align="DELETE" /></a></td>
         </tr>
